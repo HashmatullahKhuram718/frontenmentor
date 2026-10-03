@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Rating Component</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- First card: rating screen -->
+        <section class="rating-card">
+
+            <div class="star">
+                <img src="images/icon-star.svg" alt="Star icon">
+            </div>
+
+            <div class="content">
+
+                <h3>How did we do?</h3>
+
+                <p>
+                    Please let us know how we did with your support request.
+                    All feedback is appreciated to help us improve our offering!
+                </p>
+
+            </div>
+
+
+            <div class="bar">
+
+                <!-- FIX:
+                     These are selection controls, so buttons are better than <a href="">
+                     Using <a href=""> can try to reload/navigate the page.
+                -->
+
+                <button class="rating" type="button">1</button>
+                <button class="rating" type="button">2</button>
+                <button class="rating" type="button">3</button>
+                <button class="rating" type="button">4</button>
+                <button class="rating" type="button">5</button>
+
+            </div>
+
+
+            <!-- FIX:
+                 Added class so JavaScript selects this exact button.
+                 Using document.querySelector("button") would select the first rating button now.
+            -->
+            <button class="submit-btn" type="button">
+                Submit
+            </button>
+
+        </section>
+
+
+
+        <!-- Second card: hidden initially -->
+        <section class="thank-you">
+
+            <img
+                src="images/illustration-thank-you.svg"
+                alt="Thank you illustration"
+            >
+
+            <p id="score">
+
+                <!-- FIX: corrected "selcted" to "selected" -->
+
+                You selected
+                <span id="from">0</span>
+                out of 5
+
+            </p>
+
+
+            <h3>Thank you!</h3>
+
+
+            <p id="text">
+                We appreciate you taking the time to give a rating.
+                If you ever need more support, don't hesitate to get in touch!
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <!-- Correct place for JavaScript:
+         Put it at the end of body so HTML loads first.
+    -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
